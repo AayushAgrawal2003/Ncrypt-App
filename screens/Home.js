@@ -17,7 +17,7 @@ import * as Font from "expo-font";
 const screenHeight = Math.round(Dimensions.get("window").height);
 const screenWidth = Math.round(Dimensions.get("window").width);
 const picture = require("../assets/logo.png");
-const picture2 = require("../assets/logo2.png");
+const picture2 = require("../assets/finalPicture.png");
 const picture3 = require("../assets/logomain.png");
 const picture4 = require("../assets/change.jpeg");
 const picture5 = require("../assets/next.png");
@@ -51,13 +51,13 @@ export default class HomeScreen extends React.Component {
               width: screenWidth
             }}
           >
-            <Image source={picture3} style={styles.img} />
+            <Image source={picture2} style={styles.img} />
             {this.state.fontLoaded ? (
               <Text style={styles.txt}>VKare</Text>
             ) : null}
             <View
               style={{
-                backgroundColor: "#0d8ca6",
+                backgroundColor: "#3b7fec",
                 position: "absolute",
                 zIndex: -10,
                 bottom: 0,

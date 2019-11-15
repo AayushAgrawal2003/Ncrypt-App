@@ -28,7 +28,10 @@ export default class Health extends React.Component {
   render() {
     return (
       <Card style={[styles.dabba, this.props.style]}>
-        <Image source={this.props.src} style={styles.picture} />
+        <Image
+          source={this.props.src}
+          style={[styles.picture, this.props.calories]}
+        />
         {this.state.fontLoaded ? (
           <Text style={(styles.textp, styles.one)}> {this.props.title} </Text>
         ) : null}

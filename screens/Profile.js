@@ -3,7 +3,13 @@ import { Text, View, StyleSheet, Button } from "react-native";
 import Health from "../components/Healthrecords";
 import { ScrollView } from "react-native-gesture-handler";
 
-const heart = require("../assets/heart.png");
+const heart = require("../assets/dil.png");
+const steps = require("../assets/doggo.png");
+const dis = require("../assets/scale.png");
+const cal = require("../assets/fire.png");
+const vet = require("../assets/doc.png");
+const kilo = require("../assets/kilo.png");
+const han = require("../assets/veg.png");
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -42,7 +48,7 @@ export default class ProfileScreen extends React.Component {
             current="2000 Steps"
             title="Steps"
             goal="10000 Steps"
-            src={heart}
+            src={steps}
             style={{ backgroundColor: "#fd7792" }}
           />
 
@@ -50,7 +56,7 @@ export default class ProfileScreen extends React.Component {
             current="10Km"
             title="Distance Travelled"
             goal="20Km"
-            src={heart}
+            src={dis}
             style={{ backgroundColor: "#55ae95" }}
           />
 
@@ -58,31 +64,33 @@ export default class ProfileScreen extends React.Component {
             current="560"
             title="Calories Burnt"
             goal="1000"
-            src={heart}
+            src={cal}
             style={{ backgroundColor: "#f39422" }}
+            calories={{ height: 39 }}
           />
 
           <Health
             current="Quarterly"
             title="Vet Visit "
             goal="Monthly"
-            src={heart}
+            src={vet}
             style={{ backgroundColor: "#eef5b2" }}
+            calories={{ height: 35 }}
           />
 
           <Health
             current="77 kg"
             title="Weight"
             goal="73 Kg"
-            src={heart}
+            src={kilo}
             style={{ backgroundColor: "#fb5b5a" }}
           />
 
           <Health
-            current=""
+            current="--"
             title="Health and Nutrition "
-            goal=""
-            src={heart}
+            goal="--"
+            src={han}
             style={{ backgroundColor: "#71a95a" }}
           />
 
