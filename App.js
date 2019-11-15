@@ -1,36 +1,53 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import Constants from "expo-constants";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import HomeScreen from "./screens/Home";
 import ProfileScreen from "./screens/Profile";
 import AnimalScreen from "./screens/Animal";
+import HealthScreen from "./screens/HealthS";
+import AboutScreen from "./screens/About";
+import FriendsScreen from "./screens/Friends";
 //import { Icon } from "react-native-elements";
 
 const paw = require("./assets/paw.png");
 const heart = require("./assets/heart.png");
 const users = require("./assets/users.png");
+
 import Paws from "./components/icons";
 
 const MainNavigator = createStackNavigator({
-  Home: { screen: HomeScreen },
-  Animal: { screen: AnimalScreen },
-  Profile: { screen: ProfileScreen }
+  Health: { screen: HealthScreen },
+  Profile: { screen: ProfileScreen },
+  Animal: {
+    screen: AnimalScreen
+  }
 });
 
-const App = createAppContainer(MainNavigator);
-
-//export default App;
-//Socail
-//MyPet
-//MyPetpro
+const NewNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  About: {
+    screen: AboutScreen
+  }
+});
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: NewNavigator,
+      navigationOptions: {
+        tabBarLabel: " ",
+        tabBarIcon: ({ tintColor }) => <Paws src={paw} />
+      }
+    },
+    Friends: {
+      screen: FriendsScreen,
       navigationOptions: {
         tabBarLabel: " ",
         tabBarIcon: ({ tintColor }) => (
@@ -38,15 +55,8 @@ const TabNavigator = createBottomTabNavigator(
         )
       }
     },
-    Animal: {
-      screen: AnimalScreen,
-      navigationOptions: {
-        tabBarLabel: " ",
-        tabBarIcon: ({ tintColor }) => <Paws src={paw} />
-      }
-    },
-    Profile: {
-      screen: ProfileScreen,
+    Health: {
+      screen: MainNavigator,
       navigationOptions: {
         tabBarLabel: " ",
         tabBarIcon: ({ tintColor }) => <Paws src={heart} />
@@ -68,7 +78,7 @@ const TabNavigator = createBottomTabNavigator(
     }
   }
 );
-
+// const App = createAppContainer(MainNavigator);
 export default createAppContainer(TabNavigator);
 
 const styles = StyleSheet.create({

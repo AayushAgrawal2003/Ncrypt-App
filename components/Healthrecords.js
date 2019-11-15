@@ -18,7 +18,10 @@ export default class Health extends React.Component {
   async componentDidMount() {
     await Font.loadAsync({
       Montserrat: require("../assets/fonts/Montserrat.ttf"),
-      prox: require("../assets/fonts/PX.otf")
+      prox: require("../assets/fonts/PX.otf"),
+      Rob: require("../assets/fonts/Roboto-Regular.ttf"),
+      RobT: require("../assets/fonts/Roboto-Thin.ttf"),
+      com: require("../assets/fonts/comfart.ttf")
     });
     this.setState({ fontLoaded: true });
   }
@@ -71,20 +74,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
     left: 50,
     top: 20,
-    fontFamily: "Montserrat"
+    fontFamily: "Rob"
   },
   second: {
     position: "absolute",
     fontSize: 15,
     left: 30,
     bottom: 10,
-    fontFamily: "prox"
+    fontFamily: "com"
   },
   third: {
     position: "absolute",
     right: 30,
     fontSize: 15,
     bottom: 10,
-    fontFamily: "prox"
+    fontFamily: "com"
   }
 });

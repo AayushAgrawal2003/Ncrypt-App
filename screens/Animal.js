@@ -1,7 +1,5 @@
 import React from "react";
 import { Text, View, StyleSheet, Button, ScrollView } from "react-native";
-import Constants from "expo-constants";
-import { LinearGradient } from "expo-linear-gradient";
 
 import Box from "../components/BoxPanel";
 const dog = require("../assets/pic1.jpg");
@@ -10,7 +8,14 @@ const dog3 = require("../assets/pic3.jpg");
 
 export default class AnimalScreen extends React.Component {
   static navigationOptions = {
-    title: "PetPro"
+    title: "PetPro Plans",
+    headerStyle: {
+      backgroundColor: "#f4511e"
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      fontWeight: "bold"
+    }
   };
   render() {
     //const {navigate} = this.props.navigation;
@@ -46,18 +51,18 @@ export default class AnimalScreen extends React.Component {
             cls={"rgba(225, 161, 93  , 0.8)"}
             clss={"rgba(238, 100, 152, 0.8)"}
             src={dog2}
-            name="Gold"
-            duration="3 Months"
-            price="10"
+            name="&nbsp;&nbsp;&nbsp; Gold"
+            duration="6 Months"
+            price="30"
             style={styles.play}
           />
           <Box
             cls={"rgba(24, 152, 178 , 0.6)"}
             clss={"rgba( 23, 198, 185,0.6)"}
             src={dog3}
-            name="Silver"
-            duration="3 Months"
-            price="10"
+            name=" &nbsp;&nbsp;Silver"
+            duration="1 Year"
+            price="50"
             style={styles.play}
           />
         </ScrollView>
@@ -67,11 +72,7 @@ export default class AnimalScreen extends React.Component {
   }
 }
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: Constants.statusBarHeight,
-    padding: 0,
-    flexGrow: 1
-  },
+  container: {},
   play: {
     marginVertical: 1
   }

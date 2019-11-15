@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Card } from "react-native-paper";
-import { disableExpoCliLogging } from "expo/build/logs/Logs";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
 //const background = require("../assets/main.png");
@@ -15,7 +14,10 @@ export default class Box extends React.Component {
   async componentDidMount() {
     await Font.loadAsync({
       Montserrat: require("../assets/fonts/Montserrat.ttf"),
-      prox: require("../assets/fonts/PX.otf")
+      prox: require("../assets/fonts/PX.otf"),
+      Rob: require("../assets/fonts/Roboto-Regular.ttf"),
+      RobT: require("../assets/fonts/Roboto-Thin.ttf"),
+      com: require("../assets/fonts/comfart.ttf")
     });
     this.setState({ fontLoaded: true });
   }
@@ -33,7 +35,7 @@ export default class Box extends React.Component {
           }}
         >
           {this.state.fontLoaded ? (
-            <Text style={(styles.textp, styles.one)}> {this.props.name} </Text>
+            <Text style={styles.one}> {this.props.name} </Text>
           ) : null}
 
           {this.state.fontLoaded ? (
@@ -83,22 +85,21 @@ const styles = StyleSheet.create({
     color: "white"
   },
   one: {
-    alignSelf: "center",
     textAlign: "center",
     position: "absolute",
-    left: "50%",
+    left: "40%",
     top: "40%",
     fontSize: 45,
     color: "white",
-    fontFamily: "prox",
+    fontFamily: "Rob",
     transform: [{ translateX: -70 }]
   },
   sec: {
     position: "absolute",
-    fontFamily: "Montserrat",
-    fontSize: 15,
+    fontFamily: "prox",
+    fontSize: 18,
 
-    color: "rgba(194, 194, 194,0.9)",
+    color: "rgba(194, 194, 194,1)",
     bottom: 0,
     right: 0
   },
@@ -106,9 +107,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     left: 0,
-    fontSize: 15,
+    fontSize: 18,
 
-    fontFamily: "Montserrat",
-    color: "rgba(194, 194, 194,0.9)"
+    fontFamily: "prox",
+    color: "rgba(194, 194, 194,1)"
   }
 });
